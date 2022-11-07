@@ -27,7 +27,7 @@ const SingleTour = ({ singleTour }) => {
 
                                     <div class="flex items-center justify-between mt-4">
 
-                                        <Link to='/' class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
+                                        <Link to={`/tour/${singleTour._id}`} class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
                                     </div>
 
                                 </div>

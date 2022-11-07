@@ -13,9 +13,9 @@ const Tours = () => {
     return (
         <div>
             <div>
-                <h1 className='text-4xl text-center font-bold m-10'>Best Tour Of The Year</h1>
+                <h1 className='text-4xl text-center mt-20 font-bold m-10'>Best Tour Of The Year</h1>
             </div>
-            <div className='grid grid-cols-3 gap-10 mt-10 container mx-auto'>
+            <div className='grid grid-cols-3 gap-10  container mx-auto'>
             {
                 tour.map(singletour => <TourCard
                 key={singletour._id}

@@ -6,7 +6,7 @@ const TourCard = ({ singletour }) => {
     console.log(name);
     return (
         <section class="bg-white dark:bg-gray-900">
-            <div class="container px-6 py-10 mx-auto">
+            <div class="container  py-10 mx-auto">
                 <hr class="my-8 border-gray-200 dark:border-gray-700"/>
 
                     <div>
@@ -29,7 +29,7 @@ const TourCard = ({ singletour }) => {
                                         <div>
                                             <h1>Package Price: <span className='font-bold'>${price}</span> </h1>
                                         </div>
-                                        <Link to='/' class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
+                                        <Link to={`/tour/${singletour._id}`} class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
                                     </div>
 
                                 </div>
