@@ -3,7 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 
 const SinglePost = () => {
     const data = useLoaderData()
-    const { name, img, category, ratingsCount, price, ratings, duration } = data
+    const { name, img, category, description, tourImages, ratingsCount, price, ratings, duration } = data
+    const { img1, img2, img3 } = tourImages
     console.log(data);
     return (
         <section class="bg-white container mx-auto dark:bg-gray-900">
@@ -19,9 +20,26 @@ const SinglePost = () => {
                                 {name}
                             </h1>
                             <h1 class="text-3xl mt-6 text-center font-bold leading-tight text-blue-600  dark:text-white">
-                               Price: ${price} / <span>Duration: {duration}</span>
+                                Price: ${price} / <span>Duration: {duration}</span>
                             </h1>
                         </div>
+                        <div >
+                            <p class="mt-6 text-left text-1xl text-black font-medium uppercase">{description}</p>
+                        </div>
+
+
+                        <div className='grid grid-cols-3 gap-4 mt-10'>
+                            <div>
+                                <img src={img1} alt="" />
+                            </div>
+                            <div>
+                                <img src={img2} alt="" />
+                            </div>
+                            <div>
+                                <img src={img3} alt="" />
+                            </div>
+                        </div>
+
                     </div>
 
                     {/* <div class="mt-8 lg:w-1/4 lg:mt-0 lg:px-6">

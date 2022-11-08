@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import TourCard from './TourCard';
 
 const Tours = () => {
@@ -23,6 +24,7 @@ const Tours = () => {
                 ></TourCard> )
             }
         </div>
+        <Link to='/tour'><button className='btn btn-primary'>See All Tour</button></Link>
         </div>
     );
 };

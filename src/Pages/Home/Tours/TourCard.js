@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TourCard = ({ singletour }) => {
-    const { name, img, price,category } = singletour
+    const { name, img, price,category,description, tourImages } = singletour
+    const dd = description
+    const text= dd.slice(0, 100 , '...');
+
     console.log(name);
     return (
         <section class="bg-white dark:bg-gray-900">
@@ -20,9 +23,8 @@ const TourCard = ({ singletour }) => {
                                         {name}
                                     </h1>
 
-                                    <p class="mt-2 text-gray-500 dark:text-gray-400">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam est asperiores vel, ab animi
-                                        recusandae nulla veritatis id tempore sapiente
+                                    <p class="mt-2 text-1xl text-black font-medium dark:text-gray-400">
+                                        {text}
                                     </p>
 
                                     <div class="flex items-center justify-between mt-4">

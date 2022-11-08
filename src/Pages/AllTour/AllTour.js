@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import CardAllTour from './CardAllTour';
 
 const AllTour = () => {
@@ -17,6 +17,7 @@ const AllTour = () => {
                 ></CardAllTour>)
             }
             </div>
+            
         </div>
     );
 };
