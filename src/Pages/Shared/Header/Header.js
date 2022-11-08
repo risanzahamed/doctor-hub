@@ -1,6 +1,6 @@
 import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo (1).png'
+import logo from '../../../assets/doctor.png'
 import { AuthContext } from '../../../Contexts/Authentications/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,10 +26,16 @@ const Header = () => {
                         <Link to='/'  className="flex items-center px-4 -mb-1  dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
                     </li>
                     <li className="flex">
-                        <Link to='/tour'  className="flex items-center px-4 -mb-1  dark:border-transparent">Tour</Link>
+                        <Link to='/services'  className="flex items-center px-4 -mb-1  dark:border-transparent">Service</Link>
                     </li>
                     <li className="flex">
-                        <Link to='/contact'  className="flex items-center px-4 -mb-1  dark:border-transparent">Contact</Link>
+                        <Link to='/my-service'  className="flex items-center px-4 -mb-1  dark:border-transparent">My Service</Link>
+                    </li>
+                    <li className="flex">
+                        <Link to='/myaddedservice'  className="flex items-center px-4 -mb-1  dark:border-transparent">Added Service</Link>
+                    </li>
+                    <li className="flex">
+                        <Link to='/my-review'  className="flex items-center px-4 -mb-1  dark:border-transparent">My Review</Link>
                     </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden z-40 lg:flex">

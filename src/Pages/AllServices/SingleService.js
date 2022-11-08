@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
-const SingleTour = ({ singleTour }) => {
-    const { name, img, category, description } = singleTour
+const SingleService = ({ singleService }) => {
+    const { name, img, category, description } = singleService
     const dd = description
     const text = dd.slice(0, 100, '...');
 
@@ -33,7 +33,7 @@ const SingleTour = ({ singleTour }) => {
 
                             <div class="flex items-center justify-between mt-4">
 
-                                <Link to={`/tour/${singleTour._id}`} class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
+                                <Link to={`/services/${singleService._id}`} class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
                             </div>
 
                         </div>
@@ -44,4 +44,4 @@ const SingleTour = ({ singleTour }) => {
     );
 };
 
-export default SingleTour;
+export default SingleService;
