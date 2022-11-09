@@ -21,12 +21,12 @@ const router = createBrowserRouter([
        {
         path:'/services',
         element:<CardAllService/>,
-        loader: ()=>fetch('https://server-xi-five.vercel.app/services-collection')
+        loader: ()=>fetch('https://server-risanzahamed.vercel.app/services-collection')
        },
        {
         path:'/services/:id',
         element:<SinglePost/>,
-        loader: ({params})=>fetch(`https://server-xi-five.vercel.app/services/${params.id}`)
+        loader: ({params})=>fetch(`https://server-risanzahamed.vercel.app/services/${params.id}`)
        },
 
        {

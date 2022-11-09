@@ -2,14 +2,17 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../Contexts/Authentications/AuthContext';
+import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
+    useTitle('Register')
     const { createUser,googleLogin } = useContext(AuthContext);
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+        
 
         createUser(email, password)
             .then(result => {

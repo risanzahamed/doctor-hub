@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../Hooks/useTitle';
 
 const MyReview = () => {
+    useTitle('My Review')
 
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/my-review")
+        fetch("https://server-risanzahamed.vercel.app/my-review")
             .then(res => res.json())
             .then(data => setReview(data))
             .catch(err => console.log(err))

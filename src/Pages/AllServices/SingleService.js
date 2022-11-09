@@ -4,7 +4,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const SingleService = ({ singleService }) => {
-    const { name, img, category, description } = singleService
+    const { name, img, category, description,price } = singleService
     const dd = description
     const text = dd.slice(0, 100, '...');
 
@@ -30,6 +30,10 @@ const SingleService = ({ singleService }) => {
                             <p class="mt-2 text-1xl text-black font-medium dark:text-gray-400">
                                 {text}
                             </p>
+
+                            <div className='mt-5'>
+                                <h1>Package Price: <span className='font-bold'>${price}</span> </h1>
+                            </div>
 
                             <div class="flex items-center justify-between mt-4">
 

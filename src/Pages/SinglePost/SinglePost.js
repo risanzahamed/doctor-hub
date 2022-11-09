@@ -4,14 +4,18 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { AuthContext } from '../../Contexts/Authentications/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
+import useTitle from '../../Hooks/useTitle';
 
 
 
 const SinglePost = () => {
+    useTitle('Post')
     const data = useLoaderData()
     const { user } = useContext(AuthContext);
-    const { name, img, category, description, images, ratingsCount, price, ratings, specialCare } = data
+    const { name, img, category, description, images, ratingsCount, price, ratings, reviews, specialCare } = data
     const { img1, img2, img3 } = images
+    const {care1, care2} =specialCare
+    console.log(reviews);
 
 
     const handleReview = (event) => {
@@ -90,7 +94,7 @@ const SinglePost = () => {
                             </div>
                         </div>
 
-                        {/* <div>
+                        <div className='text-xl font-medium mt-10'>
                             Some Special Care From Us:
                             <div>
                                 {care1}
@@ -98,7 +102,7 @@ const SinglePost = () => {
                             <div>
                                 {care2}
                             </div>
-                        </div> */}
+                        </div>
 
 
 
@@ -129,7 +133,24 @@ const SinglePost = () => {
                 </div>
             </div>
 
-            <div className='w-100'>
+            <section class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
+                    {
+                        reviews.map(review => {
+                            return (
+                                <div class="p-8 border rounded-lg dark:border-gray-700">
+                                    <p class="leading-loose text-gray-500 dark:text-gray-400">
+                                        {review.review01}, {review.review02}, {review.review03}.
+                                    </p>
+                                    <div class="flex justify-center align-middle items-center mt-8 -mx-2">
+                                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </section>
+
+            <div className='container flex flex-col items-center p-4 mx-auto space-y-6 md:p-8'>
                 {
                     user?.email ? <div className="flex mt-10 text-center dark:bg-gray-900 dark:text-gray-100">
                         <form onSubmit={handleReview} novalidate="" action="" className="flex flex-col w-full max-w-lg p-12 rounded shadow-lg dark:text-gray-100 ng-untouched ng-pristine ng-valid">
@@ -158,6 +179,7 @@ const SinglePost = () => {
 
                 }
             </div>
+
         </section>
     );
 };

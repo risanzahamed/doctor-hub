@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Authentications/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
 
     const { Userlogin, googleLogin } = useContext(AuthContext);
+    useTitle('Login')
 
     const handleLogin = event => {
         event.preventDefault();

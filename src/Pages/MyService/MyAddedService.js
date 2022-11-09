@@ -4,7 +4,7 @@ const MyAddedService = () => {
     const [service, setService] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/my-service")
+        fetch("https://server-risanzahamed.vercel.app/my-service")
             .then(res => res.json())
             .then(data => setService(data))
             .catch(err => console.log(err))

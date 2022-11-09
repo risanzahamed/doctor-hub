@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Authentications/AuthContext';
+import useTitle from '../../Hooks/useTitle';
 
 const MyService = () => {
+    useTitle('My Service')
     const { user } = useContext(AuthContext)
 
     const handleAddService = (event) => {
@@ -17,7 +19,7 @@ const MyService = () => {
             message: form.message.value,
         }
 
-        fetch('http://localhost:5000/my-service', {
+        fetch('https://server-risanzahamed.vercel.app/my-service', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -53,7 +55,7 @@ const MyService = () => {
                                 <label htmlfor="username" className="self-start text-xs font-semibold">Your Name</label>
                                 <input type="text" name='name' placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" />
                                 <label htmlfor="email" className="self-start text-xs font-semibold">Your Email</label>
-                                <input type="email" name='email' placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" />
+                                <input type="email" name='email' placeholder="Type here" className="input input-bordered input-primary  w-full max-w-xs" defaultValue={user?.email} readOnly />
                                 <label htmlfor="therapy" className="self-start text-xs font-semibold">Which Therapy Do You Need?</label>
                                 <input type="text" name='therapy' placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" />
                                 <label htmlfor="review" className="self-start mt-3 text-xs font-semibold">Describe About your problem!</label>
