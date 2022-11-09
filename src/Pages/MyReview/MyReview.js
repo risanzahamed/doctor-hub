@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Contexts/Authentications/AuthContext';
 import useTitle from '../../Hooks/useTitle';
 
 const MyReview = () => {
     useTitle('My Review')
+
+    const {updatePhoto} = useContext(AuthContext)
 
     const [review, setReview] = useState([])
 
@@ -34,7 +37,7 @@ const MyReview = () => {
                                     </p>
 
                                     <div class="flex items-center mt-8 -mx-2">
-                                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
+                                        <img class="object-cover mx-2 rounded-full w-14 shrink-0 h-14 ring-4 ring-gray-300 dark:ring-gray-700" src={updatePhoto} alt="" />
 
                                         <div class="mx-2">
                                             <h1 class="font-semibold text-gray-800 dark:text-white">{review.name}</h1>

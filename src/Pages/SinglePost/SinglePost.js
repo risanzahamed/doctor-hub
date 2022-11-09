@@ -11,7 +11,7 @@ import useTitle from '../../Hooks/useTitle';
 const SinglePost = () => {
     useTitle('Post')
     const data = useLoaderData()
-    const { user } = useContext(AuthContext);
+    const { user,updateName } = useContext(AuthContext);
     const { name, img, category, description, images, ratingsCount, price, ratings, reviews, specialCare } = data
     const { img1, img2, img3 } = images
     const {care1, care2} =specialCare
@@ -36,7 +36,6 @@ const SinglePost = () => {
             .then(res => res.json())
             .then(data => {
                 toast("successfully review added")
-                form.reset()
                 console.log(data)
             })
             .catch(err => err.message(err))
@@ -107,29 +106,6 @@ const SinglePost = () => {
 
 
                     </div>
-
-                    {/* <div>
-                        <h1 className='text-3xl ml-5 font-medium text-blue-600'>Book A Tour</h1>
-                        {
-                            user?.email ? <div className="flex mt-10 text-center dark:bg-gray-900 dark:text-gray-100">
-                            <form novalidate="" action="" className="flex flex-col w-full max-w-lg p-12 rounded shadow-lg dark:text-gray-100 ng-untouched ng-pristine ng-valid">
-                                <h1 className='text-2xl '>
-
-
-                                    Hii {user?.displayName ?
-                                        user?.displayName : user?.email
-                                    } Now You can book a tour
-
-                                </h1>
-                                <label for="username" className="self-start text-xs font-semibold">You Name</label>
-                                <input type="text" placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" />
-                                <label htmlfor="review" className="self-start mt-3 text-xs font-semibold">Your Review</label>
-                                <textarea className="textarea textarea-bordered" placeholder="Your Review"></textarea>
-                                <input type="submit" className='btn btn-primary mt-5' value="Submit Your Review" />
-                            </form>
-                        </div> : <h2 className='text-3xl mt-5 ml-5 font-semibold '> Please <span className='text-red-600 '><Link to='/login'>login</Link></span> For Book a tour</h2>
-                        }
-                    </div> */}
                 </div>
             </div>
 
@@ -165,7 +141,7 @@ const SinglePost = () => {
 
                             </h1>
                             <label for="username" className="self-start text-xs font-semibold">You Name</label>
-                            <input type="text" name="name" placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" />
+                            <input type="text" name="name" placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" defaultValue={user?.displayName} readOnly/>
                             <label htmlfor="review" className="self-start mt-3 text-xs font-semibold">Your Review</label>
                             <textarea name="review" className="textarea textarea-bordered" placeholder="Your Review"></textarea>
                             <input type="submit" className='btn btn-primary mt-5' value="Submit Your Review" />

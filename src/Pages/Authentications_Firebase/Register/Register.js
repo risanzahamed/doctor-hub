@@ -6,11 +6,13 @@ import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
     useTitle('Register')
-    const { createUser,googleLogin } = useContext(AuthContext);
+    const { createUser,googleLogin, updatePhoto, updateName } = useContext(AuthContext);
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
+        const pictureUrl = form.pictureUrl.value;
         const password = form.password.value;
         
 
@@ -18,6 +20,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 toast('User signUp Successfully!')
+                updateName(name)
+                updatePhoto(pictureUrl)
                 console.log(user);
                 form.reset()
 
@@ -48,15 +52,19 @@ const Register = () => {
                     <h1 className="text-2xl font-bold text-center">Sign Up</h1>
                     <form onSubmit={handleSignUp} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                         <div className="space-y-1 text-sm">
-                            <label htmlFor="username" className="block  dark:text-gray-400">Name</label>
+                            <label  className="block  dark:text-gray-400">Name</label>
                             <input type="text" name="name" id="username" placeholder="Your Name" className="border w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         </div>
                         <div className="space-y-1 text-sm">
-                            <label htmlFor="username" className="block dark:text-gray-400">Email</label>
+                            <label  className="block dark:text-gray-400">Email</label>
                             <input type="email" name="email" id="email" placeholder="Your Email" className="border w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         </div>
                         <div className="space-y-1 text-sm">
-                            <label htmlFor="password" className="block dark:text-gray-400">Password</label>
+                            <label  className="block dark:text-gray-400">Picture URL</label>
+                            <input type="url" name="pictureUrl" id="url" placeholder="Your Picture URL" className="border w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        </div>
+                        <div className="space-y-1 text-sm">
+                            <label  className="block dark:text-gray-400">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" className="border w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm text-white bg-purple-600">Register</button>
