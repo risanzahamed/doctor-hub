@@ -46,7 +46,7 @@ const SinglePost = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-review?email=${user.email}`)
+        fetch(`https://doctor-hub-8d110.web.app/my-review?email=${user.email}`)
             .then(res => res.json())
             .then(data => mySetReview(data))
             .catch(err => console.log(err))
