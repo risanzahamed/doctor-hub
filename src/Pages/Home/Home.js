@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/Authentications/AuthContext';
 import useTitle from '../../Hooks/useTitle';
-import AddedService from './AddedService/AddedService';
 import Banner from './Banner/Banner';
 import Features from './Features/Features';
 import OurRecommend from './OurRecommended/OurRecommend';
@@ -19,7 +18,7 @@ const Home = () => {
     const [service, setService] = useState([])
 
     useEffect(() => {
-        fetch(`https://server-xi-five.vercel.app/my-services?email=${user?.email}`)
+        fetch(`https://server-xi-five.vercel.app/my-service?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [user?.email])
@@ -31,7 +30,6 @@ const Home = () => {
             <Features />
             <OurRecommend />
             <Services />
-            <h1>service {service.length}</h1>
 
             {
                 user?.email ? <>
