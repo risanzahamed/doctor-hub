@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Doctor Hub Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site Link: https://doctor-hub-8d110.web.app/
 
-## Available Scripts
+Api Link : https://server-xi-five.vercel.app/
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Main Features :
+* Firebase
+* React
+* React Router
+* MongoDB
+* Tailwind
+* Tailwind Component:
+1. DaisyUi
+2. https://www.mambaui.com/
+3. https://kitwind.io/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Details About Website: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Doctor Hub website is a service based website which i am create for the most famous Therapist in Chittagong Doctor Mihfuzur Rahman. In this site i added her services. Like Manual Therapy, Physiotherapy, Manual Therapy etc. Each of the services are dynamic. I also add a feature for login and registration. When a user logged in the website he/she can upload a review. And it will show in the website. But without login into the site no one can submit a review. 
 
-### `npm run build`
+Pages List:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Home
+Service
+Blog
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I added Authentication feature using firebase and added Email password signin and Google sign method. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+But when a user login they will see more pages
 
-### `npm run eject`
+Home
+Service
+My Service
+Added Service
+My Review
+Blog
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I added private routing features apply on
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+My Service page
+Added Service page
+My Review page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Added a loader in those pages.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

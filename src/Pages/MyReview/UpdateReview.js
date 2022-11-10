@@ -21,7 +21,7 @@ const UpdateReview = () => {
         }
         setUpdatedReview(reviews)
 
-        fetch(`http://localhost:5000/my-review/${data._id}`,{
+        fetch(`https://server-xi-five.vercel.app/my-review/${data._id}`,{
             method: 'PUT',
             Headers:{
                 'content-type':'application/json'
@@ -39,7 +39,7 @@ const UpdateReview = () => {
     }
 
     useEffect(() => {
-        fetch("https://server-risanzahamed.vercel.app/my-review")
+        fetch("https://server-xi-five.vercel.app/my-review")
             .then(res => res.json())
             .then(data => mySetReview(data))
             .catch(err => console.log(err))

@@ -10,7 +10,7 @@ const MyReview = () => {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch("https://server-risanzahamed.vercel.app/my-review")
+        fetch("https://server-xi-five.vercel.app/my-review")
             .then(res => res.json())
             .then(data => setReview(data))
             .catch(err => console.log(err))
@@ -22,8 +22,6 @@ const MyReview = () => {
                 <div className="mt-6 md:flex md:items-center md:justify-between">
                     <div>
                         <h1 className="text-3xl font-semibold text-gray-800 capitalize xl:text-5xl lg:text-4xl dark:text-white">
-                            
-
                             {
                                 review.length === 0 ? "No review added" : <></>
                             }
