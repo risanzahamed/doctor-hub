@@ -5,16 +5,16 @@ import ReviewDetails from './ReviewDetails';
 
 const MyReview = () => {
     useTitle('My Review')
-    const {updatePhoto} = useContext(AuthContext)
+    const {updatePhoto, user} = useContext(AuthContext)
 
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch("https://server-xi-five.vercel.app/my-review")
+        fetch('https://server-xi-five.vercel.app/my-review')
             .then(res => res.json())
             .then(data => setReview(data))
             .catch(err => console.log(err))
-    }, [])
+    }, [user?.email])
 
     return (
         <section className="bg-white dark:bg-gray-900">

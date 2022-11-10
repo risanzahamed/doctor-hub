@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Contexts/Authentications/AuthContext';
 
 const MyAddedService = () => {
     const [service, setService] = useState([])
+    const {user} = useContext(AuthContext)
 
-    useEffect(() => {
-        fetch("https://server-xi-five.vercel.app/my-service")
-            .then(res => res.json())
-            .then(data => setService(data))
-            .catch(err => console.log(err))
-    }, [])
+    useEffect(()=>{
+        fetch(`https://server-xi-five.vercel.app/my-service?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data => setService(data))
+    },[user?.email])
+
 
     return (
         <div className="overflow-x-auto container mx-auto">
+
 
             {
                 service.length === 0 ? <h1 className="text-3xl font-semibold text-gray-800 capitalize xl:text-5xl lg:text-4xl dark:text-white"> No Service Added </h1> 

@@ -4,7 +4,6 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceCard = ({ singleService }) => {
-    console.log(singleService);
     const { name, img, price, category, description, tourImages } = singleService
     const dd = description
     const text = dd.slice(0, 100, '...');

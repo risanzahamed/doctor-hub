@@ -5,6 +5,7 @@ import Register from "../Pages/Authentications_Firebase/Register/Register.js"
 import Blog from "../Pages/Blog/Blog"
 import Home from "../Pages/Home/Home"
 import Main from "../Pages/Main/Main"
+import MyaddService from "../Pages/MyaddService/MyaddService"
 import MyReview from "../Pages/MyReview/MyReview"
 import UpdateReview from "../Pages/MyReview/UpdateReview"
 import MyAddedService from "../Pages/MyService/MyAddedService"
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
        {
         path:"/blog",
         element:<Blog/>
+       },
+       {
+        path:'/MyaddService',
+        element:<MyaddService/>
        }
       ])
     }

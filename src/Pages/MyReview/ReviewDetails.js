@@ -5,6 +5,8 @@ import { AuthContext } from '../../Contexts/Authentications/AuthContext';
 
 const ReviewDetails = ({ reviewdetails }) => {
 
+    console.log(reviewdetails);
+
 
     const [displayReview, setDisplayReview] = useState([])
 
