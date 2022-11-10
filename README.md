@@ -49,5 +49,9 @@ Added a loader in those pages.
 
 When a user go to my review page he / she can see all of the reviews which he/she uploaded. and he/she can delete the review and also update the review details.
 
+I also add a add service page which help a user for add a service .
+
+Thank You.....
+
 
 
