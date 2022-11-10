@@ -12,7 +12,13 @@ const MyAddedService = () => {
 
     return (
         <div className="overflow-x-auto container mx-auto">
-            <table className="table w-full">
+
+            {
+                service.length === 0 ? <h1 className="text-3xl font-semibold text-gray-800 capitalize xl:text-5xl lg:text-4xl dark:text-white"> No Service Added </h1> 
+                
+                : 
+                
+                <table className="table w-full">
                
                 <thead>
                     <tr>
@@ -24,6 +30,7 @@ const MyAddedService = () => {
                     </tr>
                 </thead>
                 <tbody>
+
                     {
                         service.map(service =>{
                             return(
@@ -39,6 +46,10 @@ const MyAddedService = () => {
                     }
                 </tbody>
             </table>
+            }
+
+           
+            
         </div>
     );
 };

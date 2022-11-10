@@ -10,17 +10,17 @@ const OurRecommend = () => {
             <div className='grid w-100 grid-cols-3 gap-4 container mx-auto'>
                 <div>
                     <div>
-                        <img src="http://jituchauhan.com/physiotherapy/physiotherapy-blue/images/service-3.jpg" alt="" srcset="" />
+                        <img src="http://jituchauhan.com/physiotherapy/physiotherapy-blue/images/service-3.jpg" alt="" srcSet="" />
                     </div>
                 </div>
                 <div>
                     <div>
-                        <img src="http://jituchauhan.com/physiotherapy/physiotherapy-blue/images/service-4.jpg" alt="" srcset="" />
+                        <img src="http://jituchauhan.com/physiotherapy/physiotherapy-blue/images/service-4.jpg" alt="" srcSet="" />
                     </div>
                 </div>
                 <div>
                     <div>
-                        <img src="http://jituchauhan.com/physiotherapy/physiotherapy-blue/images/service-5.jpg" alt="" srcset="" />
+                        <img src="http://jituchauhan.com/physiotherapy/physiotherapy-blue/images/service-5.jpg" alt="" srcSet="" />
                     </div>
                 </div>
             </div>

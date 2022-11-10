@@ -11,9 +11,9 @@ const ServiceCard = ({ singleService }) => {
 
     console.log(name);
     return (
-        <section class="bg-white dark:bg-gray-900">
-            <div class="container  py-10 mx-auto">
-                <hr class="my-8 border-gray-200 dark:border-gray-700" />
+        <section className="bg-white dark:bg-gray-900">
+            <div className="container  py-10 mx-auto">
+                <hr className="my-8 border-gray-200 dark:border-gray-700" />
 
                 <div>
                     <div className='text-left shadow-xl'>
@@ -23,22 +23,22 @@ const ServiceCard = ({ singleService }) => {
                             </PhotoView>
                         </PhotoProvider>
 
-                        <div class=" p-10">
-                            <span class="text-blue-500 uppercase">{category}</span>
+                        <div className=" p-10">
+                            <span className="text-blue-500 uppercase">{category}</span>
 
-                            <h1 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
+                            <h1 className="mt-4 text-xl font-semibold text-gray-800 dark:text-white">
                                 {name}
                             </h1>
 
-                            <p class="mt-2 text-1xl text-black font-medium dark:text-gray-400">
+                            <p className="mt-2 text-1xl text-black font-medium dark:text-gray-400">
                                 {text}
                             </p>
 
-                            <div class="flex items-center justify-between mt-4">
+                            <div className="flex items-center justify-between mt-4">
                                 <div>
                                     <h1>Package Price: <span className='font-bold'>${price}</span> </h1>
                                 </div>
-                                <Link to={`/services/${singleService._id}`} class="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
+                                <Link to={`/services/${singleService._id}`} className="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
                             </div>
 
                         </div>

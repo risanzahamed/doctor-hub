@@ -1,6 +1,7 @@
 import React from 'react';
 import {  useLoaderData } from 'react-router-dom';
 import useTitle from '../../Hooks/useTitle';
+import MyReview from '../MyReview/MyReview';
 import SingleService from './SingleService';
 import CardAllTour from './SingleService';
 
@@ -17,7 +18,8 @@ const CardAllService = () => {
                 allservice.map(singleService => <SingleService
                 key={singleService._id}
                 singleService= {singleService}
-                ></SingleService>)
+                ></SingleService>
+                )
             }
             </div>
             

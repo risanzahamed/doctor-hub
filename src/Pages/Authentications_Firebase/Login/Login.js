@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Authentications/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
+
+    const location = useLocation()
+    const navigator = useNavigate()
+    const from = location.state?.from?.pathname || '/'
 
     const { Userlogin, googleLogin } = useContext(AuthContext);
     useTitle('Login')
@@ -20,8 +24,11 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 toast('User login Successfully!')
+
                 console.log(user);
                 form.reset()
+
+                navigator(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)

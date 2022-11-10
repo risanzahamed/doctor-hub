@@ -14,12 +14,11 @@ const Header = () => {
             .then(toast('User logged out!'))
             .catch(error => console.log(error))
     }
-    console.log(user);
     return (
         <header className=" z-40 p-4  text-neutral-content">
             <div className="container flex justify-between h-16 mx-auto">
                 <Link to='/' aria-label="Back to homepage" className="flex z-40 items-center p-2">
-                    <img src={logo} alt="" srcset="" />
+                    <img src={logo} alt="" srcSet="" />
                 </Link>
                 <ul className="items-stretch text-black hidden text-1xl font-semibold z-40 space-x-3 lg:flex">
                     <li className="flex">
@@ -44,6 +43,9 @@ const Header = () => {
                                 </li>
                             </> : <></>
                     }
+                    <li className="flex">
+                        <Link to='/blog' className="flex items-center px-4 -mb-1  dark:border-transparent">Blog</Link>
+                    </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden z-40 lg:flex">
                     {

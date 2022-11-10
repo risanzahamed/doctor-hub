@@ -10,7 +10,7 @@ const Banner = () => {
                     <h1 className="mb-5 lg:text-8xl  font-bold">Dr. Mihfuzur Rahman  Best  <br />
                        Therapist in Chittagong</h1>
 
-                   <Link to='/services'> <button className='btn btn-success text-2xl capitalize mt-5 font-bold'>See My All Services</button></Link>
+                   <Link to='/services'> <button className='btn btn-primary capitalize mt-5 '>See My All Services</button></Link>
                 </div>
             </div>
         </div>

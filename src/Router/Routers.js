@@ -2,12 +2,15 @@ import { createBrowserRouter } from "react-router-dom"
 import CardAllService from "../Pages/AllServices/CardAllService"
 import Login from "../Pages/Authentications_Firebase/Login/Login"
 import Register from "../Pages/Authentications_Firebase/Register/Register.js"
+import Blog from "../Pages/Blog/Blog"
 import Home from "../Pages/Home/Home"
 import Main from "../Pages/Main/Main"
 import MyReview from "../Pages/MyReview/MyReview"
+import UpdateReview from "../Pages/MyReview/UpdateReview"
 import MyAddedService from "../Pages/MyService/MyAddedService"
 import MyService from "../Pages/MyService/MyService"
 import SinglePost from "../Pages/SinglePost/SinglePost"
+import PrivateRouter from "./PrivateRouter/PrivateRouter"
 
 const router = createBrowserRouter([
     {
@@ -17,6 +20,7 @@ const router = createBrowserRouter([
        {
         path:'/',
         element:<Home/>,
+        loader: ()=>fetch('https://server-risanzahamed.vercel.app/my-service')
        },
        {
         path:'/services',
@@ -39,18 +43,26 @@ const router = createBrowserRouter([
        },
        {
         path:'/my-service',
-        element:<MyService/>
+        element:<PrivateRouter><MyService/></PrivateRouter>
        },
        {
         path: '/myaddedservice',
-        element: <MyAddedService/>
+        element: <PrivateRouter><MyAddedService/></PrivateRouter>
        },
        {
         path:'/my-review',
-        element: <MyReview/>
+        element: <PrivateRouter><MyReview/></PrivateRouter>,
+       },
+       {
+        path:'/update-review/:id',
+        element:<UpdateReview/>,
+        loader: ({params})=>fetch(`http://localhost:5000/my-review/${params.id}`)
+       },
+       {
+        path:"/blog",
+        element:<Blog/>
        }
       ])
-
     }
   ])
 

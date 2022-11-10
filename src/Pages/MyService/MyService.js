@@ -28,9 +28,10 @@ const MyService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast("successfully service added")
-                form.reset()
-                console.log(data)
+                if(data.acknowledged){
+                    toast("successfully service added")
+                    form.reset()
+                }
             })
             .catch(err => err.message(err))
 
