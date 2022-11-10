@@ -19,7 +19,7 @@ const MyService = () => {
             message: form.message.value,
         }
 
-        fetch('https://server-risanzahamed.vercel.app/my-service', {
+        fetch('https://server-xi-five.vercel.app/my-service', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

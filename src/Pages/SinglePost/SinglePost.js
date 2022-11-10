@@ -26,7 +26,7 @@ const SinglePost = () => {
             review: form.review.value,
         }
 
-        fetch('https://server-risanzahamed.vercel.app/my-review', {
+        fetch('https://server-xi-five.vercel.app/my-review', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -45,7 +45,7 @@ const SinglePost = () => {
 
 
     useEffect(() => {
-        fetch("https://server-risanzahamed.vercel.app/my-review")
+        fetch("https://server-xi-five.vercel.app/my-review")
             .then(res => res.json())
             .then(data => mySetReview(data))
             .catch(err => console.log(err))
