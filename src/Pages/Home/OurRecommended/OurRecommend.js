@@ -7,7 +7,7 @@ const OurRecommend = () => {
     return (
         <div>
             <div>
-                <h1 className='text-4xl text-center font-bold m-10'>My Best Services and 100% Successful</h1>
+                <h1 className='lg:text-4xl text-2xl text-center font-bold m-10'>My Best Services and 100% Successful</h1>
             </div>
             <div className='grid w-100 grid-cols-3 gap-4 container mx-auto'>
                 <div>
