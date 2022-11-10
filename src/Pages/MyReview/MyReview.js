@@ -10,10 +10,9 @@ const MyReview = () => {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch(`https://doctor-hub-8d110.web.app/my-review?email=${user.email}`)
+        fetch(`https://server-xi-five.vercel.app/my-review?email=${user.email}`)
             .then(res => res.json())
             .then(data => setReview(data))
-            .catch(err => console.log(err))
     }, [user?.email])
 
     return (
