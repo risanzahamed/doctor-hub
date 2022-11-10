@@ -10,7 +10,7 @@ const MyReview = () => {
     const [review, setReview] = useState([])
 
     useEffect(() => {
-        fetch('https://server-xi-five.vercel.app/my-review')
+        fetch(`http://localhost:5000/my-review?email=${user.email}`)
             .then(res => res.json())
             .then(data => setReview(data))
             .catch(err => console.log(err))
@@ -18,6 +18,7 @@ const MyReview = () => {
 
     return (
         <section className="bg-white dark:bg-gray-900">
+            
             <div className="container px-6 py-10 mx-auto">
                 <div className="mt-6 md:flex md:items-center md:justify-between">
                     <div>

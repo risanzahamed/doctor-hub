@@ -24,6 +24,7 @@ const SinglePost = () => {
         const review = {
             name: form.name.value,
             review: form.review.value,
+            email: form.email.value,
         }
 
         fetch('https://server-xi-five.vercel.app/my-review', {
@@ -45,7 +46,7 @@ const SinglePost = () => {
 
 
     useEffect(() => {
-        fetch("https://server-xi-five.vercel.app/my-review")
+        fetch(`http://localhost:5000/my-review?email=${user.email}`)
             .then(res => res.json())
             .then(data => mySetReview(data))
             .catch(err => console.log(err))
@@ -171,6 +172,8 @@ const SinglePost = () => {
                             </h1>
                             <label for="username" className="self-start text-xs font-semibold">You Name</label>
                             <input type="text" name="name" placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" defaultValue={user?.displayName || "unknown"} readOnly />
+                            <label for="username" className="self-start text-xs font-semibold">You Email</label>
+                            <input type="text" name="email" placeholder="Type here" className="input input-bordered input-primary   w-full max-w-xs" defaultValue={user?.email} readOnly />
                             <label htmlfor="review" className="self-start mt-3 text-xs font-semibold">Your Review</label>
                             <textarea name="review" className="textarea textarea-bordered" placeholder="Your Review"></textarea>
                             <input type="submit" className='btn btn-primary mt-5' value="Submit Your Review" />
