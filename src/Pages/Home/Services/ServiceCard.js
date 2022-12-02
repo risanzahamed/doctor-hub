@@ -4,7 +4,8 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceCard = ({ singleService }) => {
-    const { name, img, price, category, description, tourImages } = singleService
+    const { name, img, price, category, description, tourImages, _id } = singleService
+    
     const dd = description
     const text = dd.slice(0, 100, '...');
 
@@ -37,7 +38,7 @@ const ServiceCard = ({ singleService }) => {
                                 <div>
                                     <h1>Package Price: <span className='font-bold'>${price}</span> </h1>
                                 </div>
-                                <Link to={`/services/${singleService._id}`} className="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
+                                <Link to={`/services/${_id}`} className="inline-block text-blue-500 underline hover:text-blue-400">Read more</Link>
                             </div>
 
                         </div>

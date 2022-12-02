@@ -46,7 +46,7 @@ const SinglePost = () => {
 
 
     useEffect(() => {
-        fetch(`https://server-xi-five.vercel.app/my-review?email=${user.email}`)
+        fetch(`https://server-xi-five.vercel.app/my-review?email=${user?.email}`)
             .then(res => res.json())
             .then(data => mySetReview(data))
             .catch(err => console.log(err))
