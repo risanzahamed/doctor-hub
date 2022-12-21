@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/Authentications/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
-
+    const [errorpassword, seterrorpassword] = useState()
     const location = useLocation()
     const navigator = useNavigate()
     const from = location.state?.from?.pathname || '/'
@@ -19,6 +19,10 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
+
+        if(password.length < 6){
+            seterrorpassword('password should be 6 characters')
+        }
 
         Userlogin(email, password)
             .then(result => {
@@ -68,6 +72,7 @@ const Login = () => {
                         <button className="block w-full p-3 text-center rounded-sm text-white bg-purple-600">Login</button>
                         <ToastContainer />
                     </form>
+                    <p className='text-red-600 font-semibold'>{errorpassword}</p>
                     <div className="flex items-center pt-4 space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                         <p className="px-3 text-sm dark:text-gray-400">Login with Google accounts</p>

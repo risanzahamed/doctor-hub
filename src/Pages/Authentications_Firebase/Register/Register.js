@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../Contexts/Authentications/AuthContext';
@@ -7,6 +7,7 @@ import useTitle from '../../../Hooks/useTitle';
 const Register = () => {
     useTitle('Register')
     const { createUser,googleLogin, updatePhoto, updateName } = useContext(AuthContext);
+    const [errorpassword, seterrorpassword] = useState()
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,6 +15,12 @@ const Register = () => {
         const email = form.email.value;
         const pictureUrl = form.pictureUrl.value;
         const password = form.password.value;
+
+        
+
+        if(password.length < 6){
+            seterrorpassword('password should be 6 characters')
+        }
         
 
         createUser(email, password)
@@ -69,6 +76,7 @@ const Register = () => {
                         </div>
                         <button className="block w-full p-3 text-center rounded-sm text-white bg-purple-600">Register</button>
                     </form>
+                    <p className='text-red-600 font-semibold'>{errorpassword}</p>
                     <div className="flex items-center pt-4 space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                         <p className="px-3 text-sm dark:text-gray-400">Register with Google accounts</p>
